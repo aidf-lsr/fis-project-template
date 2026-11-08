@@ -1,34 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <title>Bug Hunt: Compound Interest</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 480px; margin: 40px auto; padding: 0 16px; color: #404040; }
-    h1 { color: #004282; }
-    label { display: block; margin: 16px 0 6px; }
-    input { font-size: 18px; padding: 8px; width: 100%; box-sizing: border-box; }
-    button { margin-top: 16px; font-size: 18px; padding: 10px 20px; background: #004282; color: #fff; border: none; border-radius: 6px; }
-    #result { margin-top: 24px; font-size: 22px; font-weight: bold; color: #c1660b; }
-  </style>
 </head>
 <body>
-  <h1>Compound Interest Calculator</h1>
-  <p>An AI wrote this calculator. S$1,000 at 5% a year for 3 years should give <b>S$1,157.63</b>. Does it?</p>
-
-  <label for="amount">Amount saved today (S$)</label>
-  <input id="amount" type="number" value="1000">
-
+  <h1>Compound interest calculator</h1>
+  <p>Expected: S$1,000 at 5% a year for 3 years gives S$1,157.63</p>
+  <label>Amount (S$): <input id="amount" value="1000"></label>
   <button onclick="calculate()">Calculate</button>
-  <div id="result"></div>
+  <p id="result"></p>
 
   <script>
-    // This code has at least 4 bugs. Find them before asking Copilot!
+    // An AI wrote this code. It has at least 3 bugs. Can you find them?
     function calculate() {
       const result = document.getElementById("result");
       const amount = document.getElementById("amount").value;
-      const rate = 5;     // % per year
+      const rate = 5;      // % per year
       const years = 3;
       const total = amount + amount * rate * years;
       result.textContent = "After 3 years: S$" + total;
